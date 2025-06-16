@@ -1,19 +1,13 @@
-%% File: professional-highlights/ci-cd-pipeline.mmd
+%% diagrams/ci-cd-pipeline.mmd
 flowchart TD
-    A[Feature Branch] --> B[Dev Environment]
-    B --> C[UAT Environment]
-    C --> D[Production Environment]
-    
-    A --> A1[SAST Scan]
-    A --> A2[Linting]
-    
-    B --> B1[Unit Tests]
-    B --> B2[Smoke Tests]
-    
-    C --> C1[Full QA]
-    C --> C2[Performance Testing]
-    C --> C3[Security Scans]
-    
-    D --> D1[Gradual Rollout]
-    D --> D2[Health Checks]
-    D --> D3[Cloud Monitoring]
+    subgraph Pipeline["CI/CD Workflow"]
+        direction LR
+        F[Feature Branch] --SAST/Linting--> D[Dev Environment]
+        D --Unit/Smoke Tests--> U[UAT Environment]
+        U --Full QA & Security--> P[Production]
+        
+        P --Health Checks--> R[Gradual Rollout]
+        R --Validation--> M[Cloud Monitoring]
+        M --Metrics--> U
+    end
+    style Pipeline fill:#f8f9fa,stroke:#0d6efd,stroke-width:2px
