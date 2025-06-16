@@ -10,7 +10,7 @@
 - **General Approach**: RBAC implementation
 - **Outcome Focus**: Enhanced data protection
 
-![Development Activity](development-rhythm.png)
+![Development Activity](development-rhythm.jpg)
 *Professional development rhythm (2023-present)*
 
 *Note: All content demonstrates industry-standard patterns, not specific implementations.*
