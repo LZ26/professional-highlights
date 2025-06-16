@@ -1,0 +1,19 @@
+%% File: professional-highlights/ci-cd-pipeline.mmd
+flowchart TD
+    A[Feature Branch] --> B[Dev Environment]
+    B --> C[UAT Environment]
+    C --> D[Production Environment]
+    
+    A --> A1[SAST Scan]
+    A --> A2[Linting]
+    
+    B --> B1[Unit Tests]
+    B --> B2[Smoke Tests]
+    
+    C --> C1[Full QA]
+    C --> C2[Performance Testing]
+    C --> C3[Security Scans]
+    
+    D --> D1[Gradual Rollout]
+    D --> D2[Health Checks]
+    D --> D3[CloudWatch Monitoring]
