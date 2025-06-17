@@ -1,48 +1,31 @@
-# Technical Architecture Documentation
+# Technical Diagram Explanations  
+*Conceptual overviews of industry patterns*  
 
-## CI/CD Pipeline Design
-```mermaid
-%%{init: {'theme':'base'}}%% 
-flowchart LR
-    F[Feature] --> D[Dev] --> U[UAT] --> P[Prod]
-    style P fill:#e6ffed,stroke:#52c41a
-```
-[View Full Diagram](diagrams/ci-cd-pipeline.mmd)
+## CI/CD Workflow  
+```mermaid  
+flowchart LR  
+    F[Feature] --> D[Dev] --> U[UAT] --> P[Production]  
+```  
+**Core Concept**:  
+Standard progression of code through testing environments before release.  
 
-**Engineering Decisions**:  
-- UAT consolidation reduced testing environments by 40%  
-- Security scans shifted left to feature branches  
-- Cloud monitoring replaces vendor-specific tools  
+## Security Layer  
+```mermaid  
+flowchart LR  
+    A[Request] --> B[Auth] --> C[Backend]  
+```  
+**Core Concept**:  
+Authentication gateway protecting internal resources.  
 
-## Security Architecture
-```mermaid
-%%{init: {'theme':'dark'}}%% 
-flowchart LR
-    A[Request] --> B[API Gateway] --> C[Backend]
-```
-[View Full Diagram](diagrams/security-proxy.mmd)
+## API Flow  
+```mermaid  
+sequenceDiagram  
+    Client->>API: Request  
+    API-->>Client: Response  
+```  
+**Core Concept**:  
+Basic request-response pattern in distributed systems.  
 
-**Threat Mitigation**:  
-- WAF rules blocking OWASP Top 10  
-- JWT validation with 256-bit encryption  
-- Audit logging for all access attempts  
-
-## Rollout Safety Mechanism
-```mermaid
-%%{init: {'theme':'forest'}}%% 
-sequenceDiagram
-    P->>H: Validate
-    H->>M: Collect
-    M-->>H: Status
-    alt Healthy
-        H->>R: Proceed
-    else Unhealthy
-        H->>R: Rollback
-    end
-```
-[View Full Diagram](diagrams/production-rollout.mmd)
-
-**Rollback Triggers**:  
-- Latency > 500ms  
-- Error rate > 1%  
-- CPU > 80% sustained  
+---  
+### Navigation  
+[Return to Portfolio Overview](README.md)  
