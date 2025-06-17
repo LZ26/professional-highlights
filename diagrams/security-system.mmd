@@ -1,0 +1,11 @@
+flowchart LR  
+    A[External Request] --> B[API Gateway]  
+    B --> C[Backend Service]  
+    
+    subgraph Security["Security Layer"]  
+        B --> WAF[WAF Rules]  
+        B --> Auth[Auth Validation]  
+        B --> Rate[Rate Control]  
+    end  
+    C --> Audit[Audit Logging]  
+    style Security fill:#f0f5ff,stroke:#1890ff  

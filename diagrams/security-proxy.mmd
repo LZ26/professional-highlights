@@ -1,7 +1,0 @@
-flowchart LR
-    A[External Request] --> B[API Gateway]
-    B -->|WAF Rules| C[Backend Services]
-    B -->|Rate Control| C
-    B -->|Auth Validation| C
-    C --> D[Audit Logging]
-    style B fill:#f0f5ff,stroke:#1890ff

@@ -1,12 +1,14 @@
-flowchart TD
-    subgraph Pipeline["Optimized CI/CD Workflow"]
-        direction LR
-        F[Feature Branch] -->|SAST Scan & Linting| D[Dev Environment]
-        D -->|Unit & Smoke Tests| U[UAT Environment]
-        U -->|Full QA & Security Scans| P[Production Environment]
-        P -->|Gradual Rollout| R[Release]
-        R -->|Health Checks| M[Cloud Monitoring]
-        M -->|Metrics Analysis| U
-    end
-    style P fill:#e6ffed,stroke:#52c41a,stroke-width:2px
-    style U fill:#fffbe6,stroke:#faad14
+flowchart TD  
+    subgraph Pipeline["CI/CD Workflow Concept"]  
+        direction TB  
+        F[Feature Branch] --> D[Dev Environment]  
+        D --> U[UAT Environment]  
+        U --> P[Production Environment]  
+        
+        F --> SAST[SAST Scan]  
+        D --> Tests[Automated Tests]  
+        U --> Security[Security Scan]  
+        P --> Health[Health Check]  
+    end  
+    style P fill:#e6ffed,stroke:#52c41a  
+    style U fill:#fffbe6,stroke:#faad14  
