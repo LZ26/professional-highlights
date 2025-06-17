@@ -1,16 +1,19 @@
-# Technical Patterns from Professional Experience
+# Technical Diagram Portfolio  
 
-## Cloud Automation
-- **Concept**: Infrastructure-as-code provisioning
-- **General Tools**: AWS, Serverless, CI/CD systems
-- **Outcome Focus**: Deployment optimization
+## Interactive Diagrams  
+| Diagram Type          | View Diagram               | Technical Explanation       |  
+|-----------------------|----------------------------|-----------------------------|  
+| CI/CD Workflow        | [![View](https://img.shields.io/badge/Mermaid_Diagram-0D6EFD)](diagrams/ci-cd-pipeline.mmd) | [![Details](https://img.shields.io/badge/Concept_Explanation-8A2BE2)](EXPLANATIONS.md#ci/cd-workflow) |  
+| Security Layer        | [![View](https://img.shields.io/badge/Mermaid_Diagram-00CC88)](diagrams/security-system.mmd) | [![Details](https://img.shields.io/badge/Concept_Explanation-00CC88)](EXPLANATIONS.md#security-layer) |  
+| API Request Flow      | [![View](https://img.shields.io/badge/Mermaid_Diagram-FF6B00)](diagrams/api-optimization.mmd) | [![Details](https://img.shields.io/badge/Concept_Explanation-FF6B00)](EXPLANATIONS.md#api-flow) |  
 
-## Access Security
-- **Concept**: Policy-based permission management
-- **General Approach**: RBAC implementation
-- **Outcome Focus**: Enhanced data protection
-
-## Professional Development Rhythm (2023-present)
-![Development Activity](development-rhythm.jpg)
-
-*Note: All content demonstrates industry-standard patterns, not specific implementations.*
+```mermaid  
+flowchart TB  
+    A[Portfolio] --> B[Diagrams]  
+    A --> C[Explanations]  
+    B --> D[CI/CD]  
+    B --> E[Security]  
+    B --> F[API]  
+```  
+---  
+> **Disclaimer**: Abstract representations of technical concepts - not specific implementations.  
