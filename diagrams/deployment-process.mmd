@@ -1,0 +1,10 @@
+sequenceDiagram
+    participant Dev as Developer
+    participant CI as GitLab CI
+    participant UAT as UAT Environment
+    participant Prod as Production
+    Dev->>CI: Push Code
+    CI->>UAT: Deploy Build
+    UAT-->>CI: Test Results
+    CI->>Prod: Gradual Rollout
+    Prod-->>CI: Health Status

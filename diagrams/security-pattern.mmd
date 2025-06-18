@@ -1,0 +1,10 @@
+stateDiagram-v2
+    [*] --> Authentication
+    Authentication --> RBAC_Authorization
+    RBAC_Authorization --> Resource_Access
+    Resource_Access --> Audit_Logging
+    
+    note right of Authentication
+        Microsoft Entra ID
+        SAML Integration
+    end note

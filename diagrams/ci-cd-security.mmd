@@ -1,0 +1,7 @@
+flowchart LR  
+    Code["Source Code"] --> Scan["SAST Scan"]  
+    Scan --> Build["Docker Build"]  
+    Build --> Test["Automated Tests"]  
+    Test --> Deploy["AWS Deployment"]  
+    Deploy --> Monitor["Security Monitoring"]  
+    Monitor -->|Alerts| Code  

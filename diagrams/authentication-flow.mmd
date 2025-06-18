@@ -1,0 +1,7 @@
+sequenceDiagram
+    User->>EntraID: Login Request
+    EntraID-->>User: SAML Assertion
+    User->>API: Request with Token
+    API->>EntraID: Validate Token
+    EntraID-->>API: RBAC Permissions
+    API->>Backend: Forward Request

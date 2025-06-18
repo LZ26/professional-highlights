@@ -1,0 +1,5 @@
+flowchart LR
+    Services --> Metrics
+    Metrics --> CloudWatch
+    CloudWatch --> Alerts
+    Alerts --> Teams[Teams/Slack]

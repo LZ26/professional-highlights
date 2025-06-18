@@ -1,0 +1,6 @@
+flowchart TD
+    Request --> Gateway[API Gateway]
+    Gateway --> WAF[WAF Rules]
+    Gateway --> Auth[Auth Validation]
+    Gateway --> Rate[Rate Limiting]
+    Gateway --> Backend[Backend Services]

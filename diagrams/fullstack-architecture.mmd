@@ -1,0 +1,18 @@
+flowchart TD  
+    subgraph Frontend["React Frontend"]  
+        UI["Redux Components"] -->|API Calls| APIGW  
+    end  
+    subgraph Backend["Python/Node.js Backend"]  
+        APIGW["API Gateway"] --> Auth["Auth Service"]  
+        APIGW --> StepFn["Step Functions Orchestration"]  
+        StepFn --> Lambda1["Lambda: Microservice 1"]  
+        StepFn --> Lambda2["Lambda: Microservice 2"]  
+        Auth -->|JWT| Cache[(Redis)]  
+        APIGW --> Data["Data Service"]  
+        Data --> DB[(PostgreSQL)]  
+        DB --> SP[Stored Procedures]  
+    end  
+    subgraph Monitoring["Observability"]  
+        CloudWatch --> SNS["SNS Alerts"]  
+    end  
+    Lambda1 --> OpenSearch["OpenSearch"]  

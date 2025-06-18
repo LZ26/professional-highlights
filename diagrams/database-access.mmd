@@ -1,0 +1,10 @@
+sequenceDiagram
+    participant B as Backend
+    participant P as PostgreSQL
+    B->>P: CALL sp_get_data(params)
+    activate P
+    P->>SP[Stored Proc]: Execute
+    SP-->>P: Results
+    P-->>B: Response
+    deactivate P
+    Note left of SP: Secure parameterized queries

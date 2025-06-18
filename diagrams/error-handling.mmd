@@ -1,0 +1,8 @@
+flowchart TD
+    Request --> Validation
+    Validation -->|Valid| Process
+    Validation -->|Invalid| Error[4xx Error]
+    Process -->|Failure| Retry
+    Retry -->|Success| Response
+    Retry -->|Failure| Fallback
+    Fallback --> Log[CloudWatch Logs]

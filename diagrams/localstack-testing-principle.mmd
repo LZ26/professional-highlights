@@ -1,0 +1,5 @@
+flowchart LR
+    Local[Docker Container] --> LocalStack
+    LocalStack --> S3[Mock S3]
+    LocalStack --> Lambda[Mock Lambda]
+    LocalStack --> DynamoDB[Mock DynamoDB]
