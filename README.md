@@ -6,6 +6,22 @@ This repository provides architectural patterns and system design principles fro
 
 ---
 
+## Repository Structure  
+```text
+professional-highlights/
+├── diagrams/                  # Architecture diagrams & visuals
+├── docs/                      
+│   └── EXPLANATIONS.md        # Detailed project explanations
+├── snippets/                  # Code examples
+│   ├── iac_provisioning.py    # Infrastructure-as-Code sample
+│   ├── query_optimization.sql # Database optimization techniques
+│   └── lambda_error_handling.py # AWS Lambda error handling
+├── LICENSE                    # Project license
+└── README.md                  # Project overview
+```
+
+---
+
 ## Diagram Catalog  
 | Diagram | Purpose | Technical Documentation |  
 |---------|---------|-------------------------|  
@@ -37,19 +53,6 @@ Practical implementations of key patterns:
 
 ---
 
-## Repository Structure  
-professional-highlights/
-├── diagrams/ 
-├── docs/
-│ └── EXPLANATIONS.md
-├── snippets/ # Code examples
-│ ├── iac_provisioning.py
-│ ├── query_optimization.sql
-│ └── lambda_error_handling.py
-├── LICENSE
-└── README.md
-
----
 ## License  
 This repository is licensed under the MIT License - see the [LICENSE](LICENSE.md) file for details.  
 
