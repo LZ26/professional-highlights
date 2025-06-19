@@ -60,11 +60,8 @@ Contributions to improve architectural patterns are welcome:
 
 - Fork the repository
 - Create feature branch (feat/new-diagram)
-- Add diagram to diagrams/ directory
+- Add diagram to diagrams/directory
 - Update documentation in docs/EXPLANATIONS.md
 - Submit pull request with description
 
---- 
-## Contact
-- Email: laziz.zokir26@gmail.com
-- LinkedIn: Laziz Zokirjonov
+---

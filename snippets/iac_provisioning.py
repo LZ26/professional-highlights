@@ -10,19 +10,19 @@ def create_secure_resources():
     
     # Minimal secure S3 bucket template
     template = """
-    Resources:
-      SecureBucket:
-        Type: AWS::S3::Bucket
-        Properties:
-          BucketEncryption:
-            ServerSideEncryptionConfiguration:
-              - ServerSideEncryptionByDefault:
-                  SSEAlgorithm: AES256
-          PublicAccessBlockConfiguration:
-            BlockPublicAcls: true
-            BlockPublicPolicy: true
-            IgnorePublicAcls: true
-            RestrictPublicBuckets: true
+      Resources:
+        SecureBucket:
+          Type: AWS::S3::Bucket
+          Properties:
+            BucketEncryption:
+              ServerSideEncryptionConfiguration:
+                - ServerSideEncryptionByDefault:
+                    SSEAlgorithm: AES256
+            PublicAccessBlockConfiguration:
+              BlockPublicAcls: true
+              BlockPublicPolicy: true
+              IgnorePublicAcls: true
+              RestrictPublicBuckets: true
     """
     
     # Deploy infrastructure stack

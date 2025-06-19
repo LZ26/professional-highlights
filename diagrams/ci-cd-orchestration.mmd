@@ -1,18 +1,18 @@
-%%{init: {'theme': 'dark', 'themeVariables': {  
-    'primaryColor': '#1f1f1f',  
-    'edgeLabelBackground':'#2a2a2a',  
-    'clusterBkg': '#141414'  
-}}}%%  
-flowchart LR  
-    subgraph Pipeline["GitLab CI/CD Workflow"]  
-        direction LR  
-        Commit["Code Commit"] --> Build["Build & Package"]  
-        Build --> Test["Automated Testing"]  
-        Test --> Security["Security Scan"]  
-        Security --> Deploy["Deploy to AWS"]  
-        Deploy --> Monitor["Monitoring"]  
-        Monitor -->|Feedback| Commit  
-    end  
-    style Build fill:#ffa940,stroke:#ff7a45  
-    style Deploy fill:#52c41a,stroke:#389e0d  
-    style Security fill:#ff4d4f,stroke:#cf1322  
+%%{init: {'theme': 'dark', 'themeVariables': {
+    'primaryColor': '#1f1f1f',
+    'edgeLabelBackground':'#2a2a2a',
+    'clusterBkg': '#141414'
+}}}%%
+flowchart LR
+    subgraph Pipeline["GitLab CI/CD Workflow"]
+        direction LR
+        Commit["Code Commit"] --> Build["Build & Package"]
+        Build --> Test["Automated Testing"]
+        Test --> Security["Security Scan"]
+        Security --> Deploy["Deploy to AWS"]
+        Deploy --> Monitor["Monitoring"]
+        Monitor -->|Feedback| Commit
+    end
+    style Build fill:#ffa940,stroke:#ff7a45
+    style Deploy fill:#52c41a,stroke:#389e0d
+    style Security fill:#ff4d4f,stroke:#cf1322
