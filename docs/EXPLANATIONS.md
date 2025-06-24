@@ -81,9 +81,9 @@ flowchart TD
     - SNS alert propagation
 
 ## 4. CI/CD Pipeline:
-**Diagram**: [`fullstack-architecture.mmd`](../diagrams/fullstack-architecture.mmd)
+**Diagram**: [`ci-cd-orchestration.mmd`](../diagrams/ci-cd-orchestration.mmd)
 ```mermaid
-flowchart LR  
+flowchart LR
     subgraph Pipeline["GitLab CI/CD Workflow"]
         direction LR
         Commit["Code Commit"] --> Build["Build & Package"]
@@ -92,7 +92,7 @@ flowchart LR
         Security --> Deploy["Deploy to AWS"]
         Deploy --> Monitor["Monitoring"]
         Monitor -->|Feedback| Commit
-    end 
+    end
 ```
 ***Technical Analysis***:
 - Automated Stages
@@ -109,15 +109,12 @@ flowchart LR
 **Diagram**: [`ci-cd-security.mmd`](../diagrams/ci-cd-security.mmd)
 ```mermaid
 flowchart LR  
-    subgraph Pipeline["GitLab CI/CD Workflow"]
-        direction LR
-        Commit["Code Commit"] --> Build["Build & Package"]
-        Build --> Test["Automated Testing"]
-        Test --> Security["Security Scan"]
-        Security --> Deploy["Deploy to AWS"]
-        Deploy --> Monitor["Monitoring"]
-        Monitor -->|Feedback| Commit
-    end 
+    Code["Source Code"] --> Scan["SAST Scan"]  
+    Scan --> Build["Docker Build"]  
+    Build --> Test["Automated Tests"]  
+    Test --> Deploy["AWS Deployment"]  
+    Deploy --> Monitor["Security Monitoring"]  
+    Monitor -->|Alerts| Code
 ```
 ***Technical Analysis***:
 - Shift-Left Security
