@@ -84,7 +84,7 @@ flowchart TD
 **Diagram**: [`ci-cd-orchestration.mmd`](../diagrams/ci-cd-orchestration.mmd)
 ```mermaid
 flowchart LR
-    subgraph Pipeline["GitLab CI/CD Workflow"]
+    subgraph Pipeline["CI/CD Workflow"]
         direction LR
         Commit["Code Commit"] --> Build["Build & Package"]
         Build --> Test["Automated Testing"]
